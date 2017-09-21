@@ -42,7 +42,7 @@ sudo clear
 
 echo ""
 echo -e $cyan"##############################################" 
-echo -e $pink"#         STARTING APPLICATION INSTALLER      #"
+echo -e $pink"#        STARTING APPLICATION INSTALLER      #"
 echo -e $cyan"##############################################"
 echo ""
 
