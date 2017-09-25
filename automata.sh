@@ -89,19 +89,37 @@ fi
 # ----------------------------------------------------------------------
 echo -e "Installing chromium-browser..."
 sudo apt install -y chromium-browser
+
 echo -e "Installing firefox-browser..."
 sudo apt install -y firefox
+
 echo -e "Installing google-chrome-browser..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg –i google-chrome-stable_current_amd64.deb
 #sudo apt install -y google-chrome-stable
+
 echo -e "Installing Git-core"
 sudo apt install -y git-core
+
 echo -e "Installing NodeJS & NPM"
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs
+
 echo -e "Installing Atom Text-Editor"
 sudo add-apt-repository ppa:webupd8team/atom
 sudo apt update
 sudo apt install -y atom
+
+echo -e "Installing VS Code Text-Editor"
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+sudo apt update
+sudo apt install -y code
+
+echo -e "Installing Spotify Client for Linux"
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update
+sudo apt install -y spotify-client
 # .. other apps
