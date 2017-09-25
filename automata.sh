@@ -136,6 +136,12 @@ sudo apt-get update && sudo apt-get install -y zsh
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
 sudo chsh -s $(which zsh) $(whoami)
 
+echo -e "Installing dconf-editor"
+sudo apt install -y dconf-editor
+
+echo -e "Installing Compatibility with Android $ IPhone"
+sudo apt install -y mtp-tools ipheth-utils ideviceinstaller ifuse
+
 echo -e "Adding Themes & Icons Repositories"
 sudo add-apt-repository ppa:yunnxx/elementary #Loki FlatBlackPurple Theme
 sudo add-apt-repository ppa:papirus/papirus #Papirus Icon
