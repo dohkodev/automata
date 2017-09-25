@@ -142,6 +142,17 @@ sudo apt install -y dconf-editor
 echo -e "Installing Compatibility with Android $ IPhone"
 sudo apt install -y mtp-tools ipheth-utils ideviceinstaller ifuse
 
+echo -e "Installing VLC Media Player"
+sudo apt -y install vlc
+
+echo -e "Installing JAVA"
+sudo add-apt-repository -y ppa:webupd8team/java
+#sudo apt update
+sudo apt install -y oracle-java9-installer
+
+echo -e "Installing Archive Formats and Restricted Extras"
+sudo apt install -y unace rar unrar p7zip-rar p7zip sharutils uudeview mpack arj cabextract lzip lunzip
+
 echo -e "Adding Themes & Icons Repositories"
 sudo add-apt-repository ppa:yunnxx/elementary #Loki FlatBlackPurple Theme
 sudo add-apt-repository ppa:papirus/papirus #Papirus Icon
