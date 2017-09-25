@@ -117,9 +117,38 @@ sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode s
 sudo apt update
 sudo apt install -y code
 
+echo -e "Installing Sublime Text-Editor 3"
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt install -y apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+sudo apt install -y sublime-text
+
 echo -e "Installing Spotify Client for Linux"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update
 sudo apt install -y spotify-client
+
+echo -e "Installing Oh My Zsh"
+# Source: http://choyan.me/oh-my-zsh-elementaryos/
+sudo apt-get update && sudo apt-get install -y zsh
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
+sudo chsh -s $(which zsh) $(whoami)
+
+echo -e "Adding Themes & Icons Repositories"
+sudo add-apt-repository ppa:yunnxx/elementary #Loki FlatBlackPurple Theme
+sudo add-apt-repository ppa:papirus/papirus #Papirus Icon
+sudo add-apt-repository ppa:snwh/pulp #PaperMonoDark Icon
+sudo add-apt-repository ppa:moka/daily #icon
+sudo add-apt-repository ppa:oranchelo/oranchelo-icon-theme #icon
+#sudo apt update
+sudo apt install -y elementary-lokiflatblackpurple-theme
+sudo apt install -y papirus-icon-theme
+sudo apt install -y paper-icon-theme #icon theme
+sudo apt install -y paper-cursor-theme #cursor theme
+sudo apt install -y paper-gtk-theme #gtk theme
+sudo apt install -y moka-icon-theme #icon
+sudo apt install -y faba-icon-theme faba-mono-icons #icon
+sudo apt install -y oranchelo-icon-theme #icon
 # .. other apps
