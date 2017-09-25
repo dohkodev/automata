@@ -84,16 +84,6 @@ if test ! $(which elementary-tweaks); then
     echo -e ""
 fi
 
-
-
-
-# ----------------------------------------------------------------------
-# | Update sources                                                     |
-# ----------------------------------------------------------------------
-
-#sudo apt update
-
-
 # ----------------------------------------------------------------------
 # | Install apps                                                       |
 # ----------------------------------------------------------------------
@@ -105,4 +95,13 @@ echo -e "Installing google-chrome-browser..."
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg –i google-chrome-stable_current_amd64.deb
 #sudo apt install -y google-chrome-stable
+echo -e "Installing Git-core"
+sudo apt install -y git-core
+echo -e "Installing NodeJS & NPM"
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt install -y nodejs
+echo -e "Installing Atom Text-Editor"
+sudo add-apt-repository ppa:webupd8team/atom
+sudo apt update
+sudo apt install -y atom
 # .. other apps
