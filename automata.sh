@@ -54,11 +54,38 @@ if test ! $(which software-properties-common); then
     echo -e ""
 fi
 
-if test ! $(which htop); then
-  	echo -e "INSTALLING HTOP APPLICATION... \n"
-  	sudo apt install -y htop
+echo -e "$pink"
+if test ! $(which amd64-microcode); then #intel-microcode
+  	echo -e "INSTALLING PROCESSOR DRIVERS... \n"
+  	sudo apt install -y amd64-microcode
     echo -e ""
 fi
+
+if test ! $(which gdebi); then
+  	echo -e "INSTALLING gdebi APPLICATION... \n"
+  	sudo apt install -y gdebi
+    echo -e ""
+fi
+
+if test ! $(which libreoffice); then
+  	echo -e "INSTALLING libreoffice APPLICATION... \n"
+  	sudo add-apt-repository ppa:libreoffice/ppa
+    #sudo apt update
+    sudo apt install -y libreoffice libreoffice-templates libreoffice-style-elementary libreoffice-l10n-es myspell-es hyphen-es
+    sudo apt install -y ttf-mscorefonts-installer
+    echo -e ""
+fi
+
+if test ! $(which elementary-tweaks); then
+  	echo -e "INSTALLING Elementary-tweaks APPLICATION... \n"
+  	sudo add-apt-repository ppa:philip.scott/elementary-tweaks 
+    #sudo apt-get update
+    sudo apt-get install elementary-tweaks
+    echo -e ""
+fi
+
+
+
 
 # ----------------------------------------------------------------------
 # | Update sources                                                     |
@@ -70,5 +97,12 @@ fi
 # ----------------------------------------------------------------------
 # | Install apps                                                       |
 # ----------------------------------------------------------------------
-
+echo -e "Installing chromium-browser..."
+sudo apt install -y chromium-browser
+echo -e "Installing firefox-browser..."
+sudo apt install -y firefox
+echo -e "Installing google-chrome-browser..."
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg –i google-chrome-stable_current_amd64.deb
+#sudo apt install -y google-chrome-stable
 # .. other apps
