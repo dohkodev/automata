@@ -176,6 +176,14 @@ echo -e "Installing NodeJS & NPM \n"
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs
 
+#Heroku CLI - replace x64 to x86 if necessary
+echo -e "Installing Heroku CLI"
+wget https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz -O heroku.tar.gz
+tar -xvzf heroku.tar.gz
+mkdir -p /usr/local/lib /usr/local/bin
+mv heroku-cli-v6.14.20-darwin-64 /usr/local/lib/heroku
+ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
+
 #VS Code
 echo -e "Installing VS Code Text-Editor"
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
