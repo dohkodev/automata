@@ -245,7 +245,7 @@ sudo apt install -y faba-icon-theme faba-mono-icons #icon
 sudo apt install -y oranchelo-icon-theme #icon
 
 # remove elementary softwares
-echo -e "Cleaning eOS \n"
+echo -e $yellow"Cleaning eOS \n"
 sudo apt purge epiphany-browser epiphany-browser-data
 sudo apt purge midori-granite
 sudo apt purge noise
@@ -254,5 +254,4 @@ sudo apt purge modemmanager
 sudo apt purge geary
 sudo apt autoremove
 sudo apt autoclean
-
 #Fin
