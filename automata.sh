@@ -177,7 +177,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt install -y nodejs
 
 #Heroku CLI - replace x64 to x86 if necessary
-echo -e "Installing Heroku CLI"
+echo -e "Installing Heroku CLI \n"
 wget https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz -O heroku.tar.gz
 tar -xvzf heroku.tar.gz
 mkdir -p /usr/local/lib /usr/local/bin
@@ -185,7 +185,7 @@ mv heroku-cli-v6.14.20-darwin-64 /usr/local/lib/heroku
 ln -s /usr/local/lib/heroku/bin/heroku /usr/local/bin/heroku
 
 #VS Code
-echo -e "Installing VS Code Text-Editor"
+echo -e "Installing VS Code Text-Editor \n"
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
@@ -206,7 +206,7 @@ sudo apt install -y code
 #apm install pigments
 
 #Sublime Text 3
-#echo -e "Installing Sublime Text-Editor 3"
+#echo -e "Installing Sublime Text-Editor 3 \n"
 #wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 #sudo apt install -y apt-transport-https
 #echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -214,17 +214,17 @@ sudo apt install -y code
 #sudo apt install -y sublime-text
 
 #dconf-editor
-echo -e "Installing dconf-editor"
+echo -e "Installing dconf-editor \n"
 sudo apt install -y dconf-editor
 
 #Oh my zsh terminal - Source: http://choyan.me/oh-my-zsh-elementaryos/
-echo -e "Installing Oh My Zsh"
+echo -e "Installing Oh My Zsh \n"
 sudo apt-get update && sudo apt-get install -y zsh
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash
 sudo chsh -s $(which zsh) $(whoami) 
 
 #JAVA
-echo -e "Installing JAVA"
+echo -e "Installing JAVA \n"
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt update
 sudo apt install -y oracle-java9-installer
