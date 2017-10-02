@@ -2,7 +2,7 @@
 
 # Automata
 
-<img src="https://raw.githubusercontent.com/odb/official-bash-logo/master/assets/Logos/Identity/PNG/BASH_logo-transparent-bg-color.png" height="250px" width="250px">
+<img src="https://cdn.rawgit.com/odb/official-bash-logo/master/assets/Logos/Identity/PNG/BASH_logo-transparent-bg-color.png">
 
 ##### Elementary OS Loki Shell script to setup Development Environment
 
